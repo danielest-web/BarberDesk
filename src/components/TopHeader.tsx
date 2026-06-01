@@ -26,13 +26,12 @@ export default function TopHeader({ onNew, dateDisplay }: Props) {
         >
           Novo Agendamento
         </button>
-          <div>
-            <input
-              placeholder="Buscar cliente ou serviço"
-              className="border rounded-full px-4 py-2 w-96 shadow-sm"
-            />
-          </div>
-        
+        <div>
+          <input
+            placeholder="Buscar cliente ou serviço"
+            className="border rounded-full px-4 py-2 w-96 shadow-sm"
+          />
+        </div>
       </div>
     </header>
   );
