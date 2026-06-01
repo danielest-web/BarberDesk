@@ -3,49 +3,55 @@ import React from "react";
 export default function SummaryCards() {
   const cards = [
     {
-      title: "Agendamentos Hoje",
+      title: "Agendamentos",
       value: "12",
-      subtitle: "próximas 24h",
-      icon: "📅",
-      color: "from-blue-500/20 to-cyan-500/20",
-      borderColor: "border-blue-500/30",
-      accentColor: "text-blue-400",
-    },
-    {
-      title: "Barbeiros Ativos",
-      value: "4",
-      subtitle: "em serviço",
-      icon: "👥",
-      color: "from-purple-500/20 to-pink-500/20",
-      borderColor: "border-purple-500/30",
-      accentColor: "text-purple-400",
-    },
-    {
-      title: "Receita Prevista",
-      value: "R$ 1.240",
       subtitle: "hoje",
+      icon: "📅",
+      bgGradient: "from-blue-600/10 via-blue-500/5 to-transparent",
+      borderColor: "border-blue-400/30",
+      accentColor: "from-blue-500 to-blue-600",
+      textColor: "text-blue-300",
+    },
+    {
+      title: "Barbeiros Online",
+      value: "4",
+      subtitle: "ativos",
+      icon: "👥",
+      bgGradient: "from-purple-600/10 via-purple-500/5 to-transparent",
+      borderColor: "border-purple-400/30",
+      accentColor: "from-purple-500 to-pink-600",
+      textColor: "text-purple-300",
+    },
+    {
+      title: "Faturamento",
+      value: "R$ 1.240",
+      subtitle: "previsto",
       icon: "💵",
-      color: "from-green-500/20 to-emerald-500/20",
-      borderColor: "border-green-500/30",
-      accentColor: "text-green-400",
+      bgGradient: "from-green-600/10 via-emerald-500/5 to-transparent",
+      borderColor: "border-green-400/30",
+      accentColor: "from-green-500 to-emerald-600",
+      textColor: "text-green-300",
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
       {cards.map((card, idx) => (
         <div
           key={idx}
-          className={`bg-gradient-to-br ${card.color} border ${card.borderColor} rounded-xl p-5 shadow-lg hover:shadow-xl transition backdrop-blur-sm hover:scale-[1.02]`}
+          className={`relative group bg-gradient-to-br ${card.bgGradient} border ${card.borderColor} rounded-2xl p-6 shadow-2xl hover:shadow-2xl transition-all duration-300 backdrop-blur-xl hover:border-opacity-100 overflow-hidden cursor-pointer hover:-translate-y-1`}
         >
-          <div className="flex items-start justify-between mb-4">
-            <div>
-              <p className="text-slate-400 text-xs font-medium uppercase tracking-wide mb-1">{card.title}</p>
-              <p className={`text-2xl font-bold ${card.accentColor}`}>{card.value}</p>
+          {/* Animated gradient background */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${card.accentColor} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+          
+          <div className="relative z-10 flex items-start justify-between">
+            <div className="flex-1">
+              <p className="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-2 opacity-75">{card.title}</p>
+              <p className={`text-3xl font-bold bg-gradient-to-r ${card.accentColor} bg-clip-text text-transparent`}>{card.value}</p>
+              <p className="text-slate-500 text-xs mt-2 font-medium">{card.subtitle}</p>
             </div>
-            <span className="text-2xl opacity-50">{card.icon}</span>
+            <div className="text-4xl opacity-40 group-hover:opacity-60 transition-opacity">{card.icon}</div>
           </div>
-          <p className="text-slate-500 text-xs">{card.subtitle}</p>
         </div>
       ))}
     </div>
