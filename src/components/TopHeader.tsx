@@ -19,7 +19,6 @@ export default function TopHeader({ onNew, dateDisplay }: Props) {
             placeholder="Buscar cliente ou serviço"
             className="border rounded-full px-4 py-2 w-96 pl-10 shadow-sm"
           />
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
         </div>
         <button
           onClick={onNew}
@@ -27,7 +26,13 @@ export default function TopHeader({ onNew, dateDisplay }: Props) {
         >
           Novo Agendamento
         </button>
-        <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">JD</div>
+          <div>
+            <input
+              placeholder="Buscar cliente ou serviço"
+              className="border rounded-full px-4 py-2 w-96 shadow-sm"
+            />
+          </div>
+        
       </div>
     </header>
   );
