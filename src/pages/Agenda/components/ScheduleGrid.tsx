@@ -34,14 +34,17 @@ export default function ScheduleGrid({
   onCellClick,
   onApptClick,
 }: Props) {
-  const getBarberColor = (idx: number) => BARBER_COLORS[idx % BARBER_COLORS.length];
+  const getBarberColor = (idx: number) =>
+    BARBER_COLORS[idx % BARBER_COLORS.length];
 
   return (
     <div className="rounded-2xl overflow-hidden">
       <div className="overflow-x-auto">
         <div
           className="inline-grid min-w-full"
-          style={{ gridTemplateColumns: `120px repeat(${barbers.length}, 1fr)` }}
+          style={{
+            gridTemplateColumns: `120px repeat(${barbers.length}, 1fr)`,
+          }}
         >
           {/* Header row */}
           <div className="px-4 py-5 bg-slate-800/30 border-b border-slate-700/50 font-semibold text-slate-400 text-xs uppercase tracking-wide flex items-center justify-center">
@@ -55,7 +58,9 @@ export default function ScheduleGrid({
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold mx-auto mb-2 shadow-lg">
                 {b.name.charAt(0)}
               </div>
-              <div className="text-sm font-semibold text-slate-200">{b.name}</div>
+              <div className="text-sm font-semibold text-slate-200">
+                {b.name}
+              </div>
               <p className="text-xs text-slate-400 mt-1">Online</p>
             </div>
           ))}
@@ -74,7 +79,7 @@ export default function ScheduleGrid({
                   (a) =>
                     a.barberId === b.id &&
                     a.date === date &&
-                    a.startTime === time
+                    a.startTime === time,
                 );
                 if (appt) {
                   return (
@@ -97,7 +102,8 @@ export default function ScheduleGrid({
                     a.date === date &&
                     timeIndex(a.startTime, times) < rowIdx &&
                     rowIdx <
-                      timeIndex(a.startTime, times) + Math.ceil(a.duration / 30)
+                      timeIndex(a.startTime, times) +
+                        Math.ceil(a.duration / 30),
                 );
                 if (inside) {
                   return (

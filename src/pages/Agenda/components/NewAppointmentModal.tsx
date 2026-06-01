@@ -207,7 +207,11 @@ export default function NewAppointmentModal({
                 }`}
                 onClick={() => setCreatingService((v) => !v)}
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
                 </svg>
                 {creatingService ? "Cancelar" : "Criar"}
@@ -218,7 +222,9 @@ export default function NewAppointmentModal({
           {/* Create Service Form */}
           {creatingService && (
             <div className="p-4 bg-indigo-600/10 border border-indigo-500/20 rounded-xl space-y-4">
-              <h3 className="font-semibold text-indigo-300">Criar Novo Serviço</h3>
+              <h3 className="font-semibold text-indigo-300">
+                Criar Novo Serviço
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <FormField
                   label="Nome"
@@ -297,11 +303,7 @@ export default function NewAppointmentModal({
             onClick={handleSave}
             className="px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 shadow-lg hover:shadow-xl active:scale-95 transition flex items-center gap-2"
           >
-            <svg
-              className="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
             </svg>
             {initial ? "Atualizar" : "Criar Agendamento"}

@@ -11,7 +11,9 @@ export default function TopHeader({ onNew, dateDisplay }: Props) {
       <div className="px-8 py-5 flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-slate-100">Agenda Geral</h1>
-          <p className="text-sm text-slate-400 mt-1">Gerenciar todos os agendamentos e barbeiros</p>
+          <p className="text-sm text-slate-400 mt-1">
+            Gerenciar todos os agendamentos e barbeiros
+          </p>
         </div>
 
         <div className="flex items-center gap-6">
@@ -28,7 +30,9 @@ export default function TopHeader({ onNew, dateDisplay }: Props) {
               <line x1="16" y1="2" x2="16" y2="6" />
               <line x1="8" y1="2" x2="8" y2="6" />
             </svg>
-            <span className="text-sm font-medium text-slate-300">{dateDisplay}</span>
+            <span className="text-sm font-medium text-slate-300">
+              {dateDisplay}
+            </span>
           </div>
 
           {/* New Appointment Button */}

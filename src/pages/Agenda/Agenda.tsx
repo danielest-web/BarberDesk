@@ -130,13 +130,8 @@ export default function Agenda() {
     setShowModal(true);
   }
 
-  const dateDisplay = (() => {
-    const d = new Date(date);
-    return d.toLocaleDateString();
-  })();
-
   return (
-    <div className="p-6">
+    <div className="space-y-6">
       <Header
         date={dateDisplay}
         onNew={() => {
@@ -144,22 +139,30 @@ export default function Agenda() {
           setShowModal(true);
         }}
       />
-      <div className="mb-4 flex items-center justify-between gap-4">
+
+      {/* Date and Time Slots Controls */}
+      <div className="flex items-center justify-between gap-4 pb-6 border-b border-slate-700/30">
         <div>
+          <label className="block text-sm font-semibold text-slate-300 mb-2">
+            Data
+          </label>
           <input
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="border p-2 rounded"
+            className="px-4 py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-xl text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition"
           />
         </div>
-        <TimeSlotManager
-          extraTimes={extraTimes}
-          onAdd={(t) => setExtraTimes((prev) => [...prev, t])}
-          onRemove={(t) => setExtraTimes((prev) => prev.filter((x) => x !== t))}
-        />
+        <div className="mt-6">
+          <TimeSlotManager
+            extraTimes={extraTimes}
+            onAdd={(t) => setExtraTimes((prev) => [...prev, t])}
+            onRemove={(t) => setExtraTimes((prev) => prev.filter((x) => x !== t))}
+          />
+        </div>
       </div>
 
+      {/* Schedule Grid */}
       <ScheduleGrid
         barbers={barbers}
         appointments={appointments}
@@ -169,6 +172,7 @@ export default function Agenda() {
         onApptClick={handleApptClick}
       />
 
+      {/* Modal */}
       <NewAppointmentModal
         visible={showModal}
         onClose={() => setShowModal(false)}
@@ -182,4 +186,3 @@ export default function Agenda() {
       />
     </div>
   );
-}

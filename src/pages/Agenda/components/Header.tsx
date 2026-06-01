@@ -7,19 +7,36 @@ type Props = {
 
 export default function Header({ date, onNew }: Props) {
   return (
-    <div className="flex items-center justify-between mb-6 pb-6 border-b border-slate-700/50">
+    <div className="flex items-center justify-between mb-8 pb-6 border-b border-slate-700/30">
       <div>
-        <h3 className="text-xl font-semibold text-slate-100">Agenda Geral</h3>
-        <div className="text-xs text-slate-500 mt-1">{date}</div>
+        <h3 className="text-lg font-semibold text-slate-200">
+          {new Date().toLocaleDateString("pt-BR", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </h3>
+        <p className="text-sm text-slate-400 mt-1">
+          Visualize e gerencie os agendamentos de hoje
+        </p>
       </div>
-      <div>
-        <button
-          onClick={onNew}
-          className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-semibold hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition"
+      <button
+        onClick={onNew}
+        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl active:scale-95 transition text-sm"
+      >
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
         >
-          + Novo Agendamento
-        </button>
-      </div>
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+        Novo Agendamento
+      </button>
     </div>
   );
 }
