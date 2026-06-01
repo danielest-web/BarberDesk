@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 /*
   Componente de cabeçalho da tela Agenda Geral.
@@ -12,9 +12,9 @@ import React from 'react'
 */
 
 type Props = {
-  date: string
-  onNew: () => void
-}
+  date: string;
+  onNew: () => void;
+};
 
 export default function Header({ date, onNew }: Props) {
   return (
@@ -32,5 +32,5 @@ export default function Header({ date, onNew }: Props) {
         </button>
       </div>
     </div>
-  )
+  );
 }

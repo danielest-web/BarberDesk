@@ -1,20 +1,20 @@
 # BarberDesk — Agenda Geral (MVP)
 
-Resumo
------
+## Resumo
+
 Esta pasta contém a implementação da tela "Agenda Geral" para um sistema de
 gestão de barbearias. É um MVP focado apenas na agenda (sem backend, sem
 login). Os dados são mantidos em memória e persistidos no `localStorage`.
 
-Tecnologias
------------
+## Tecnologias
+
 - React
 - TypeScript (arquivos .tsx/.ts para componentes e tipos)
 - Vite (configuração do projeto)
 - Tailwind CSS para estilização (classes já aplicadas nos componentes)
 
-O que está implementado
------------------------
+## O que está implementado
+
 - Visualização da agenda em grade: linhas = horários (30 min), colunas = barbeiros.
 - Botão "Novo Agendamento" que abre modal para criar agendamentos.
 - Serviços pré-definidos e criação de novos serviços no modal.
@@ -22,8 +22,8 @@ O que está implementado
 - Bloqueio de conflitos de horários por barbeiro.
 - Persistência simples via `localStorage` (chave: `barberdesk-data-v1`).
 
-Arquivos principais
--------------------
+## Arquivos principais
+
 - `src/pages/Agenda/Agenda.tsx` — componente principal que gerencia estado,
   persiste em `localStorage` e verifica conflitos.
 - `src/pages/Agenda/components/Header.tsx` — cabeçalho com título, data e botão.
@@ -34,8 +34,8 @@ Arquivos principais
 - `src/pages/Agenda/data.ts` — dados iniciais (barbeiros, horários, serviços).
 - `src/pages/Agenda/types.ts` — tipos TypeScript (`Barber`, `Service`, `Appointment`).
 
-Como rodar localmente
----------------------
+## Como rodar localmente
+
 1. Instale dependências:
 
 ```bash
@@ -53,10 +53,10 @@ npx tailwindcss init -p
 
 ```js
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: { extend: {} },
   plugins: [],
-}
+};
 ```
 
 4. No início de `src/index.css`, insira as diretivas do Tailwind (se desejar):
@@ -73,8 +73,8 @@ module.exports = {
 npm run dev
 ```
 
-Como os dados funcionam
-----------------------
+## Como os dados funcionam
+
 - Os serviços e agendamentos são salvos no `localStorage` com a chave
   `barberdesk-data-v1` para persistência entre reloads.
 - O formato de um `Appointment` é algo como:
@@ -94,22 +94,23 @@ Como os dados funcionam
 }
 ```
 
-Próximos passos sugeridos
--------------------------
+## Próximos passos sugeridos
+
 - Polir aparência e responsividade (ajustes Tailwind).
 - Adicionar confirmação antes de salvar/excluir agendamentos.
 - Implementar edição/exclusão de agendamentos.
 - Adicionar testes unitários e E2E.
 - Conectar a um backend para persistência real.
 
-Contato
--------
+## Contato
+
 Este repositório foi preparado como um MVP para a tela de Agenda Geral.
 Se quiser, eu posso:
 
 - Rodar a instalação das dependências e configurar Tailwind automaticamente.
 - Adicionar edição/exclusão de agendamentos.
 - Adicionar visual mais apurado e legendas de status.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
