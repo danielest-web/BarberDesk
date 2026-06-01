@@ -1,28 +1,23 @@
 :root {
-  --text: #cbd5e1;
-  --text-h: #f1f5f9;
-  --bg: #0b1120;
-  --border: #1e293b;
-  --code-bg: #0f172a;
-  --accent: #a78bfa;
-  --accent-bg: rgba(167, 139, 250, 0.12);
-  --accent-border: rgba(167, 139, 250, 0.3);
-  --social-bg: rgba(15, 23, 42, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.5) 0 20px 40px -12px, rgba(0, 0, 0, 0.3) 0 8px 16px -4px;
-
-  --sans:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --heading:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  --text: #f1f5f9;
+  --text-muted: #cbd5e1;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1a1f3a;
+  --bg-tertiary: #252d45;
+  --border: #334155;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
   --mono: "Fira Code", "Courier New", monospace;
 
   font: 15px/1.6 var(--sans);
-  letter-spacing: 0.25px;
+  letter-spacing: 0.3px;
   color-scheme: dark;
   color: var(--text);
-  background: linear-gradient(135deg, #0a0e27 0%, #0f1a3a 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -37,63 +32,74 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+* {
   margin: 0;
-  background: linear-gradient(135deg, #05070f 0%, #0a0e27 50%, #0f1a3a 100%);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #16213e 100%);
+  color: var(--text);
+  font-family: var(--sans);
   min-height: 100vh;
+  overflow: hidden;
 }
 
 #root {
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  background: transparent;
 }
 
+/* Typography */
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading);
   font-weight: 600;
-  color: var(--text-h);
   letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 h1 {
   font-size: 32px;
-  margin: 0;
+  font-weight: 700;
 }
 
 h2 {
   font-size: 24px;
-  margin: 0 0 12px;
+  font-weight: 700;
 }
 
 h3 {
   font-size: 18px;
-  font-weight: 500;
-  margin: 0;
+  font-weight: 600;
 }
 
 p {
-  margin: 0;
-}
-
-code {
-  font-family: var(--mono);
-  font-size: 13px;
-  padding: 2px 6px;
-  background: rgba(51, 65, 85, 0.4);
-  border-radius: 4px;
+  color: var(--text-muted);
 }
 
 /* Smooth transitions */
 * {
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
+  transition: color 0.2s ease, background-color 0.2s ease,
     border-color 0.2s ease;
+}
+
+button,
+a,
+input {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Scrollbar styling */
@@ -103,14 +109,14 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(30, 41, 59, 0.4);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(71, 85, 105, 0.6);
+  background: #475569;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.8);
+  background: #64748b;
 }
