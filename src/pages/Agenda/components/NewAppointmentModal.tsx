@@ -114,7 +114,9 @@ export default function NewAppointmentModal({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {/* Client Name */}
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">Cliente</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Cliente
+            </label>
             <input
               className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
               placeholder="Nome do cliente"
@@ -125,7 +127,9 @@ export default function NewAppointmentModal({
 
           {/* Phone */}
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">Telefone</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Telefone
+            </label>
             <input
               className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
               placeholder="(11) 99999-9999"
@@ -136,7 +140,9 @@ export default function NewAppointmentModal({
 
           {/* Barber */}
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">Barbeiro</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Barbeiro
+            </label>
             <select
               className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
               value={barberId}
@@ -152,7 +158,9 @@ export default function NewAppointmentModal({
 
           {/* Date */}
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">Data</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Data
+            </label>
             <input
               className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
               value={date}
@@ -162,7 +170,9 @@ export default function NewAppointmentModal({
 
           {/* Start Time */}
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">Hora</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Hora
+            </label>
             <select
               className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
               value={startTime}
@@ -178,7 +188,9 @@ export default function NewAppointmentModal({
 
           {/* Service Selector / Create Service Toggle */}
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">Serviço</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Serviço
+            </label>
             <div className="flex gap-2">
               <select
                 className="flex-1 bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
@@ -210,7 +222,9 @@ export default function NewAppointmentModal({
         {creatingService && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 p-4 bg-slate-800/30 border border-slate-700 rounded-lg">
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">Nome do Serviço</label>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Nome do Serviço
+              </label>
               <input
                 className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
                 placeholder="Ex: Corte + Barba"
@@ -219,7 +233,9 @@ export default function NewAppointmentModal({
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">Duração (min)</label>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Duração (min)
+              </label>
               <input
                 className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
                 type="number"
@@ -229,7 +245,9 @@ export default function NewAppointmentModal({
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">Valor (R$)</label>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Valor (R$)
+              </label>
               <input
                 className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
                 type="number"
@@ -245,7 +263,9 @@ export default function NewAppointmentModal({
         {!creatingService && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">Duração (min)</label>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Duração (min)
+              </label>
               <input
                 className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
                 type="number"
@@ -254,7 +274,9 @@ export default function NewAppointmentModal({
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">Valor (R$)</label>
+              <label className="block text-sm font-medium text-slate-300 mb-2">
+                Valor (R$)
+              </label>
               <input
                 className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition"
                 type="number"
@@ -267,7 +289,9 @@ export default function NewAppointmentModal({
 
         {/* Notes */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-slate-300 mb-2">Observações</label>
+          <label className="block text-sm font-medium text-slate-300 mb-2">
+            Observações
+          </label>
           <textarea
             className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition resize-none"
             placeholder="Observações do cliente..."

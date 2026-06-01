@@ -10,22 +10,22 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex">
-      <Sidebar />
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <TopHeader
-          onNew={handleNewAppointment}
-          dateDisplay={new Date().toLocaleDateString("pt-BR")}
-        />
-        <main className="flex-1 overflow-auto bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-          <div className="p-8 max-w-[1600px] mx-auto w-full">
-            <div className="mb-8">
-              <h1 className="text-4xl font-bold mb-2">Agenda</h1>
-              <p className="text-slate-400">
-                Gerencie seus agendamentos com estilo
-              </p>
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+      <TopHeader onNew={handleNewAppointment} dateDisplay={new Date().toLocaleDateString("pt-BR")} />
+      <div className="flex flex-1 overflow-hidden">
+        <Sidebar />
+        <main className="flex-1 overflow-auto bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950">
+          <div className="p-6 max-w-[1800px] mx-auto w-full space-y-6">
+            {/* Page Header */}
+            <div>
+              <h2 className="text-3xl font-bold text-slate-100 mb-1">Agenda</h2>
+              <p className="text-sm text-slate-400">Visualize e gerencie todos os agendamentos da barbearia</p>
             </div>
+
+            {/* Summary Cards */}
             <SummaryCards />
+
+            {/* Schedule Section */}
             <div className="mt-8">
               <Agenda />
             </div>

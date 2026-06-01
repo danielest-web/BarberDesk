@@ -6,44 +6,46 @@ export default function SummaryCards() {
       title: "Agendamentos Hoje",
       value: "12",
       subtitle: "próximas 24h",
-      color: "from-blue-500 to-cyan-500",
-      accent: "bg-blue-500/20",
+      icon: "📅",
+      color: "from-blue-500/20 to-cyan-500/20",
+      borderColor: "border-blue-500/30",
+      accentColor: "text-blue-400",
     },
     {
       title: "Barbeiros Ativos",
       value: "4",
       subtitle: "em serviço",
-      color: "from-purple-500 to-pink-500",
-      accent: "bg-purple-500/20",
+      icon: "👥",
+      color: "from-purple-500/20 to-pink-500/20",
+      borderColor: "border-purple-500/30",
+      accentColor: "text-purple-400",
     },
     {
       title: "Receita Prevista",
       value: "R$ 1.240",
       subtitle: "hoje",
-      color: "from-green-500 to-emerald-500",
-      accent: "bg-green-500/20",
+      icon: "💵",
+      color: "from-green-500/20 to-emerald-500/20",
+      borderColor: "border-green-500/30",
+      accentColor: "text-green-400",
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {cards.map((card, idx) => (
         <div
           key={idx}
-          className={`bg-gradient-to-br ${card.color} bg-opacity-10 border border-slate-700/50 rounded-2xl p-6 shadow-xl backdrop-blur-sm hover:shadow-2xl hover:border-slate-600 transition cursor-pointer group`}
+          className={`bg-gradient-to-br ${card.color} border ${card.borderColor} rounded-xl p-5 shadow-lg hover:shadow-xl transition backdrop-blur-sm hover:scale-[1.02]`}
         >
-          <div
-            className={`${card.accent} w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition`}
-          >
-            <span className="text-xl">
-              {idx === 0 ? "📅" : idx === 1 ? "👥" : "💵"}
-            </span>
+          <div className="flex items-start justify-between mb-4">
+            <div>
+              <p className="text-slate-400 text-xs font-medium uppercase tracking-wide mb-1">{card.title}</p>
+              <p className={`text-2xl font-bold ${card.accentColor}`}>{card.value}</p>
+            </div>
+            <span className="text-2xl opacity-50">{card.icon}</span>
           </div>
-          <p className="text-slate-400 text-sm font-medium mb-2">
-            {card.title}
-          </p>
-          <p className="text-3xl font-bold text-slate-100 mb-1">{card.value}</p>
-          <p className="text-xs text-slate-500">{card.subtitle}</p>
+          <p className="text-slate-500 text-xs">{card.subtitle}</p>
         </div>
       ))}
     </div>
